@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/*Components*/
-import App from './App';
 /*Dependencies*/
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 //import thunk from 'redux-thunk';
 //import { BrowserRouter as Router } from 'react-router-dom';
+/*Reducer*/
+import rootReducer from './reducers/index.js';
+/*Components*/
+import App from './App';
 
-//Temp reducer function
-function reducer() {
-  return {
-    state: 'temp state'
-  }
-}
-
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
